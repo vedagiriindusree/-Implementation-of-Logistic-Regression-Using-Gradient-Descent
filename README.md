@@ -8,13 +8,34 @@ To write a program to implement the the Logistic Regression Using Gradient Desce
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. Import the required libraries.
-2. Load the dataset.
-3. Define X and Y array.
-4. Define a function for costFunction,cost and gradient.
-5. Define a function to plot the decision boundary.
-6. Define a function to predict the Regression value.
-## Program // Output:
+1.Load the Dataset
+
+2.Create a Copy of the Original Data
+
+3.Drop Irrelevant Columns (sl_no, salary)
+
+4.Check for Missing Values
+
+5.Check for Duplicate Rows
+
+6.Encode Categorical Features using Label Encoding
+
+7.Split Data into Features (X) and Target (y)
+
+8.Split Data into Training and Testing Sets
+
+9.Initialize and Train Logistic Regression Model
+
+10.Make Predictions on Test Set
+
+11.Evaluate Model using Accuracy Score
+
+12.Generate and Display Confusion Matrix
+
+13.Generate and Display Classification Report
+
+14.Make Prediction on a New Sample Input
+## Program:
 ```
 /*
 Program to implement the the Logistic Regression Using Gradient Descent.
@@ -28,7 +49,6 @@ import numpy as np
 dataset=pd.read_csv("Placement_Data.csv")
 dataset
 ```
-![image](https://github.com/user-attachments/assets/83ac2116-7b61-406b-804c-08c5c0b738be)
 ```
 dataset = dataset.drop('sl_no',axis=1)
 dataset = dataset.drop('salary',axis=1)
@@ -43,7 +63,6 @@ dataset["status"]=dataset["status"].astype('category')
 dataset["hsc_s"]=dataset["hsc_s"].astype('category')
 dataset.dtypes
 ```
-![image](https://github.com/user-attachments/assets/09bd506c-9e91-4e26-b665-9c3cc238d539)
 ```
 dataset["gender"]=dataset["gender"].cat.codes
 dataset["ssc_b"]=dataset["ssc_b"].cat.codes
@@ -55,13 +74,11 @@ dataset["status"]=dataset["status"].cat.codes
 dataset["hsc_s"]=dataset["hsc_s"].cat.codes
 dataset
 ```
-![image](https://github.com/user-attachments/assets/ea820ff8-c786-4358-86c7-ceb6c9dbd929)
 ```
 X=dataset.iloc[:,:-1].values
 Y=dataset.iloc[:,-1].values
 Y
 ```
-![image](https://github.com/user-attachments/assets/d1edd8c2-2602-4956-9313-1cc8c7c1702c)
 ```
 theta = np.random.randn(X.shape[1])
 y =Y
@@ -86,22 +103,17 @@ y_pred = predict(theta,X)
 accuracy = np.mean(y_pred.flatten()==y)
 print("Accuracy:", accuracy)
 ```
-![image](https://github.com/user-attachments/assets/c7a7edeb-ab8a-4b48-9cb9-0286ac6b98cf)
 ```
 print(y_pred)
 ```
-![image](https://github.com/user-attachments/assets/84d66837-42eb-48c9-b82d-c132c5733481)
-
 ```
 print(Y)
 ```
-![image](https://github.com/user-attachments/assets/40c722e0-2725-462d-86cf-3422ed5ea9e3)
 ```
 xnew = np.array([[0,87,0,95,0,2,78,2,0,0,1,0]])
 y_prednew = predict(theta,xnew)
 print(y_prednew)
 ```
-![image](https://github.com/user-attachments/assets/8d2f586c-cc47-49fa-87dc-73c067e02e3c)
 ```
 xnew = np.array([[0,0,0,0,0,2,8,2,0,0,1,0]])
 y_prednew = predict(theta,xnew)
@@ -109,7 +121,33 @@ print(y_prednew)
 print("Name: Vedagiri Indu Sree")
 print("Reg no:212223230236")
 ```
-![image](https://github.com/user-attachments/assets/9a68cb0f-6c05-4022-a373-1e2850f7adec)
+## Output:
+## Dataset
+![image](https://github.com/user-attachments/assets/e5142b76-e6a1-4998-a023-c282d02e5a03)
+
+## dtypes
+![image](https://github.com/user-attachments/assets/4c88ae9f-814a-408d-a92f-a82b83f803a7)
+
+## dataset
+![image](https://github.com/user-attachments/assets/dfef9844-56d7-4d90-adb5-2b0b4e019f55)
+
+## y array
+![image](https://github.com/user-attachments/assets/0f32facb-3108-451e-9fbe-dac2fc393189)
+
+## Accuracy
+![image](https://github.com/user-attachments/assets/31e6f997-35d2-4f59-bc18-202ba68db6fc)
+
+## y_pred
+![image](https://github.com/user-attachments/assets/e6a43de7-ca02-488c-9112-eb9f4a94d9c3)
+
+## y
+![image](https://github.com/user-attachments/assets/747df3eb-3efb-4f39-9829-e20ca7aea0e9)
+
+## y_prednew
+![image](https://github.com/user-attachments/assets/8e6da2aa-20fd-4081-aa7d-b33ef6011621)
+
+## y_prednew
+![image](https://github.com/user-attachments/assets/035c661b-eae1-4f59-83a4-14c02b1d9948)
 
 ## Result:
 Thus the program to implement the the Logistic Regression Using Gradient Descent is written and verified using python programming.
